@@ -3,11 +3,19 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { AppContextProvider } from './context/AppContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
+import { Amplify } from "aws-amplify";
+import awsConfig from "./awsConfig";
+
+Amplify.configure(awsConfig);
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <AppContextProvider>
-      <App />
-    </AppContextProvider>
+    <AuthProvider>
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
+    </AuthProvider>
   </BrowserRouter>
 )

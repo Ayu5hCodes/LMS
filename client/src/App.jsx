@@ -12,6 +12,12 @@ import AddCourse from './pages/educator/AddCourse'
 import MyCourses from './pages/educator/MyCourses'
 import StudentsEnrolled from './pages/educator/StudentsEnrolled'    
 import Navbar from './components/student/Navbar.jsx'
+import Login from './pages/Login.jsx'
+import Signup from './pages/Signup.jsx'
+import ConfirmSignup from './pages/ConfirmSignup.jsx'
+import ForgotPassword from './pages/ForgotPassword.jsx'
+import Profile from './pages/Profile.jsx'
+
 
 const App = () => {
 
@@ -23,6 +29,14 @@ const App = () => {
         
         <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path="/confirm-signup" element={<ConfirmSignup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/profile" element={<Profile />} />
+
+
+
         <Route path='/course-list' element={<CoursesList />} />
         <Route path='/course-list/:input' element={<CoursesList />} />
         <Route path='/course/:id' element={<CourseDetails />} />
